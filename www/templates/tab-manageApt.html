@@ -1,0 +1,41 @@
+<ion-view view-title="manageApt">
+  <ion-content class="padding">
+    <div class="list card">
+      <div class="item item-divider">Manage Apartments</div>
+        <form method = "get" class="form-inline" role="form" action = "backendsignup.url">
+          <div class="form-group">
+            <label class="sr-only" for="pwd">Aptnum:</label>
+            <input type="number" class="form-control" id="aptnum">
+          </div>          
+          <div class="form-group">
+            <label class="sr-only" for="email">Bedrooms:</label>
+            <input type="number" class="form-control" id="bedrooms">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="email">Bathroom:</label>
+            <input type="number" class="form-control" id="bathrooms">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="email">Tenants:</label>
+            <input type="text" class="form-control" id="tenants">
+          </div>
+          <button type="submit" class="btn btn-default">Add tenant</button>
+          <div class="form-group">
+            <label class="sr-only" for="email">Rent:</label>
+            <input type="number" class="form-control" id="rent">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="email">Square Feet:</label>
+            <input type="number" class="form-control" id="sqrft">
+          </div>
+          <div class="checkbox">
+            <label><input type="checkbox">Available?</label>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-default">Create apartment</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
