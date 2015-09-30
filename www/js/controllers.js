@@ -1,14 +1,5 @@
 angular.module('starter.controllers', [])
 
-  .controller('DashCtrl', function($scope) {
-    // $scope.title = "title"
-  })
-
-
-  .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-    $scope.chat = Chats.get($stateParams.chatId);
-  })
-
   .controller('AccountCtrl', function($scope) {
     $scope.settings = {
       enableFriends: true
@@ -17,7 +8,11 @@ angular.module('starter.controllers', [])
 
   .controller('loginCtrl', function($scope) {
   })
-  .controller('manageUserCtrl', function($scope) {
+  .controller('manageUserCtrl', function($scope, $http) {
+    $scope.users = $http.get('https://evening-beyond-5571.herokuapp.com/users');
+    
   })
   .controller('manageAptCtrl', function($scope) {
-  });
+  })
+  .controller('AccountCtrl', function($scope) {
+});
