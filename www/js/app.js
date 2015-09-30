@@ -35,13 +35,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       .state('tab.dash', {
         url: '/dash',
         views: {
-          'tab-dash': {
+          'tab-login': {
             templateUrl: 'templates/tab-dash.html',
             controller: 'DashCtrl'
           }
         }
-      })
 
+      })
 
       .state('tab.login', {
         url: '/login',
