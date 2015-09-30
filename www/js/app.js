@@ -1,5 +1,30 @@
 // Ionic Starter App
 
+window.apartmentApp = angular.module('apartmentApp', ['ui.router']);
+
+apartmentApp.config(function($stateProvider, $urlRouterProvider) {
+
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider
+    .state('login', {
+      url: '/',
+      templateUrl: 'templates/tab-login.html',
+      controller: "mainCtrl"
+    })
+    .state('manageApt', {
+      url: '/manageApt',
+      templateUrl: 'templates/tab-manageApt.html',
+      controller: "manageAptCtrl"
+    })
+    .state('manageUser', {
+      url: '/manageUser',
+      templateUrl: 'templates/tab-manageUser.html',
+      controller: "manageUserCtrl"
+    })
+});
+
+
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -45,7 +70,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
       }
     }
   })
@@ -55,7 +79,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-chats': {
           templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
         }
       }
     })
@@ -64,7 +87,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
         }
       }
     })
