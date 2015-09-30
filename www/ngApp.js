@@ -7,17 +7,17 @@ stocksUI.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('login', {
       url: '/',
-      templateUrl: 'templates/login.html',
+      templateUrl: 'templates/tab-login.html',
       controller: "mainCtrl"
     })
     .state('manageApt', {
       url: '/manageApt',
-      templateUrl: 'templates/manageApt.html',
+      templateUrl: 'templates/tab-manageApt.html',
       controller: "manageAptCtrl"
     })
     .state('manageUser', {
       url: '/manageUser',
-      templateUrl: 'templates/manageUser.html',
+      templateUrl: 'templates/tab-manageUser.html',
       controller: "manageUserCtrl"
     })
 });
