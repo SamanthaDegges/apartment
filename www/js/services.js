@@ -1,7 +1,7 @@
 angular.module('starter.services', [])
 
 .controller('manageUserCtrl', function ($scope, $http, notify) {
-  $scope.users = $http.get('localhost:3000/users');
+  // $scope.users = $http.get('localhost:3000/users');
 })
 .factory('notify', ['$window', function(win) {
     var msgs = [];
