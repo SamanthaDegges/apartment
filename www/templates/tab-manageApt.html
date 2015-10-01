@@ -3,32 +3,32 @@
     <div class="list card">
       <div class="item item-divider">Manage Properties</div>
 
-      <form method = "get" class="form-inline" role="form" action = "backendsignup.url">
+      <form> <!--action = "localhost:3000/"-->
         <p>Add new property</p>
         <div class="form-group">
           <label class="sr-only">Manager:</label>
-          <input type="text" class="form-control" id="managerProperty">
+          <input type="text" class="form-control" ng-model="prop.manager" id="managerProperty">
         </div>
         <div class="form-group">
           <label class="sr-only">Apartment numbers:</label>
-          <input type="text" class="form-control" id="apartmentsProperty">
+          <input type="text" class="form-control" ng-model="prop.apartments" id="apartmentsProperty">
         </div>
         <button type="submit" class="btn btn-default">Add Apartment</button>
         <div class="form-group">
           <label class="sr-only">Address:</label>
-          <input type="text" class="form-control" id="address">
+          <input type="text" class="form-control" ng-model="prop.address" id="address">
         </div>
         <div class="form-group">
           <label class="sr-only">Name:</label>
-          <input type="text" class="form-control" id="nameProperty">
+          <input type="text" class="form-control" ng-model="prop.name" id="nameProperty">
         </div>
         <br>
-        <button type="submit" ng-click="addProperty()" class="btn btn-default">Create property</button>
+        <button type="submit" ng-click="addProperty(prop)" class="btn btn-default">Create property</button>
       </form>
 
       <div class="item item-divider">Manage Apartments</div>
 
-        <form method = "post" class="form-inline" role="form" action = "localhost:3000/users">
+        <form method = "post" class="form-inline" role="form" ><!--action = "localhost:3000/"-->
           <div class="form-group">
             <label class="sr-only">Aptnum:</label>
             <input type="number" class="form-control" id="aptnum">

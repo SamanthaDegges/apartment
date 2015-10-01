@@ -1,16 +1,10 @@
 var app = angular.module('starter.controllers', [])
 
-  .controller('DashCtrl', function($scope) {
-    // $scope.title = "title"
-  })
 
-  .controller('AccountCtrl', function($scope) {
-    $scope.settings = {
-      enableFriends: true
-    };
-  })
-
-
+.service('Props', function($http) {
+  this.add = (newProp) => $http.post("http://localhost:3000/managers/newProperty", newProp);
+  //props.getProps = $http.get("http://localhost:3000/managers/properties")
+})
 
 
 .service('createLogin', function($http) {
@@ -43,19 +37,48 @@ var app = angular.module('starter.controllers', [])
       then(console.log('success'), console.log('fail'));
     }
 
-
-
-
-
-  .controller('manageUserCtrl', function($scope) {
-
   })
-  .controller('manageAptCtrl', function($scope) {
+  .controller('manageAptCtrl', function($scope, Props) {
+    $scope.addProperty = function(prop){
+      Props.add(prop)
+        .then(function(res) {
+          console.log(res.data);
+          $scope.prop = {};
+        })
+        .catch(function(error){
+          prop = error;
+        });
+        //
+        //propsService.add($scope.prop)
+        //  .then(function(res) {
+        //    console.log(res.data);
+        //    $scope.prop = {};
+        //  })
+        //  .catch(function(error){
+        //    $scope.prop = error;
+        //  })
+      };
 
-    $scope.addApt = function(){
-      console.log("YAY!");
-    }
 
-  })
-  .controller('AccountCtrl', function($scope) {
+  //.controller('AccountCtrl', function($scope) {
 });
+
+//
+//var propertySchema =  mongoose.Schema({
+//  manager: [{type: mongoose.Schema.ObjectId, ref: 'user'}],
+//  name: String,
+//  address: String,
+//  apartments: [{type: mongoose.Schema.ObjectId, ref: 'Apartment'}]
+//});
+
+//
+
+
+  //.factory('aptFactory', function($http) {
+  //  var apts = () => {};
+  //  apts.get = () => $http.get('https://evening-beyond-5571.herokuapp.com/apts');
+  //  apts.add = (tickerObj) => $http.post('https://evening-beyond-5571.herokuapp.com/apts', {newTicker: tickerObj});
+  //  //apts.del = (tickerSym, refresh) => $http.post('https://evening-beyond-5571.herokuapp.com/delete', {tickerSymbol: tickerSym});
+  //
+  //  return Tracked;
+  //})
