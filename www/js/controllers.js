@@ -4,7 +4,6 @@ var app = angular.module('starter.controllers', [])
     // $scope.title = "title"
   })
 
-
   .controller('AccountCtrl', function($scope) {
     $scope.settings = {
       enableFriends: true
@@ -13,7 +12,12 @@ var app = angular.module('starter.controllers', [])
 
   .controller('loginCtrl', function($scope) {
   })
-  .controller('manageUserCtrl', function($scope) {
+  .controller('manageUserCtrl', function($scope, $http) {
+    $scope.users = $http.get('localhost:3000/managers/');
+    $scope.createuser = function(email, pwd, manager){
+      $http.post('localhost:3000/managers/', {email, pwd, manager}).
+      then(console.log('success'), console.log('fail'));
+    }
   })
   .controller('manageAptCtrl', function($scope) {
 
@@ -21,13 +25,6 @@ var app = angular.module('starter.controllers', [])
       console.log("YAY!");
     }
 
-  });
-
-//app.service('propService', function($http){
-//  this.add = function(params){
-//    return $http.post("lhttp://localhost:3000/managers/newProperty", params)
-//  }
-//});
-
-
-
+  })
+  .controller('AccountCtrl', function($scope) {
+});
