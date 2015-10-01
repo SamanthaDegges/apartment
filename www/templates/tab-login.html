@@ -2,16 +2,16 @@
   <ion-content class="padding">
     <div class="list card">
       <div class="item item-divider">Login</div>
-        <form method = "get" class="form-inline" role="form" action = "bhttps://evening-beyond-5571.herokuapp.com/users">
+        <form method = "get" class="form-inline" role="form" action = "backend.url">
           <div class="form-group">
             <label class="sr-only" for="email">Email address:</label>
-            <input type="email" class="form-control" id="email">
+            <input ng-model = "email" type="email" class="form-control" id="email">
           </div>
             <div class="form-group">
             <label class="sr-only" for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd">
+            <input ng-model = "password" type="password" class="form-control" id="pwd">
           </div>
-          <button type="submit" class="btn btn-default">login</button>
+          <button ng-click = "submitLoginInfo(email, password)" type="submit" class="btn btn-default">login</button>
         </form>
         </div>
       </div>
