@@ -3,62 +3,62 @@
     <div class="list card">
       <div class="item item-divider">Manage Properties</div>
 
-      <form> <!--action = "localhost:3000/"-->
+      <form method = "get" class="form-inline" role="form" action = "backendsignup.url">
         <p>Add new property</p>
         <div class="form-group">
           <label class="sr-only">Manager:</label>
-          <input type="text" class="form-control" ng-model="prop.manager" id="managerProperty">
+          <input type="text" class="form-control" id="managerProperty">
         </div>
         <div class="form-group">
           <label class="sr-only">Apartment numbers:</label>
-          <input type="text" class="form-control" ng-model="prop.apartments" id="apartmentsProperty">
+          <input type="text" class="form-control" id="apartmentsProperty">
         </div>
         <button type="submit" class="btn btn-default">Add Apartment</button>
         <div class="form-group">
           <label class="sr-only">Address:</label>
-          <input type="text" class="form-control" ng-model="prop.address" id="address">
+          <input type="text" class="form-control" id="address">
         </div>
         <div class="form-group">
           <label class="sr-only">Name:</label>
-          <input type="text" class="form-control" ng-model="prop.name" id="nameProperty">
+          <input type="text" class="form-control" id="nameProperty">
         </div>
         <br>
-        <button type="submit" ng-click="addProperty(prop)" class="btn btn-default">Create property</button>
+        <button type="submit" ng-click="addProperty()" class="btn btn-default">Create property</button>
       </form>
 
       <div class="item item-divider">Manage Apartments</div>
 
-        <form method = "post" class="form-inline" role="form" ><!--action = "localhost:3000/"-->
+        <form method = "post" class="form-inline" role="form" action = "localhost:3000/users">
           <div class="form-group">
             <label class="sr-only">Aptnum:</label>
-            <input type="number" class="form-control" id="aptnum">
+            <input type="number" class="form-control" id="aptnum" ng-model="apartment.aptnum">
           </div>
           <div class="form-group">
             <label class="sr-only">Bedrooms:</label>
-            <input type="number" class="form-control" id="bedrooms">
+            <input type="number" class="form-control" id="bedrooms" ng-model="apartment.bedrooms">
           </div>
           <div class="form-group">
             <label class="sr-only">Bathroom:</label>
-            <input type="number" class="form-control" id="bathrooms">
+            <input type="number" class="form-control" id="bathrooms" ng-model="apartment.bathrooms">
           </div>
           <div class="form-group">
             <label class="sr-only" >Tenants:</label>
-            <input type="text" class="form-control" id="tenants">
+            <input type="text" class="form-control" id="tenants" ng-model="apartment.tenants">
           </div>
-          <button type="submit" class="btn btn-default">Add tenant</button>
+          <button type="submit" class="btn btn-default" ng-click="addTenant(a)">Add tenant</button>
           <div class="form-group">
             <label class="sr-only">Rent:</label>
-            <input type="number" class="form-control" id="rent">
+            <input type="number" class="form-control" id="rent" ng-model="apartment.rent">
           </div>
           <div class="form-group">
             <label class="sr-only">Square Feet:</label>
-            <input type="number" class="form-control" id="sqrft">
+            <input type="number" class="form-control" id="sqrft" ng-model="apartment.sqrft">
           </div>
           <div class="checkbox">
             <label><input type="checkbox">Available?</label>
           </div>
           <br>
-          <button ng-click="addApt()" class="btn btn-default">Create apartment</button>
+          <button ng-click="addApt(apartment)" class="btn btn-default">Create apartment</button>
         </form>
         </div>
       </div>
