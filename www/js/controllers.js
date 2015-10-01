@@ -9,8 +9,11 @@ angular.module('starter.controllers', [])
   .controller('loginCtrl', function($scope) {
   })
   .controller('manageUserCtrl', function($scope, $http) {
-    $scope.users = $http.get('https://evening-beyond-5571.herokuapp.com/users');
-    
+    $scope.users = $http.get('localhost:3000/managers/');
+    $scope.createuser = function(email, pwd, manager){
+      $http.post('localhost:3000/managers/', {email, pwd, manager}).
+      then(console.log('success'), console.log('fail'));
+    }
   })
   .controller('manageAptCtrl', function($scope) {
   })
